@@ -25,7 +25,7 @@ const ThingsToDo = ({ parkCode }) => {
   const totalPages = Math.ceil(thingsToDo.length / resultsPerPage);
 
   const fetchThingsToDo = async () => {
-    const apiKey = process.env.API_KEY;
+    const apiKey = process.env.REACT_APP_API_KEY;
 
     const url = `https://developer.nps.gov/api/v1/thingstodo?parkCode=${parkCode}&api_key=${apiKey}`;
 

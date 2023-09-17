@@ -19,7 +19,7 @@ const Search = () => {
   };
 
   const fetchParks = async () => {
-    const apiKey = process.env.API_KEY;
+    const apiKey = process.env.REACT_APP_API_KEY;
     const url = `https://developer.nps.gov/api/v1/parks?q=${searchValue}&api_key=${apiKey}`;
 
     try {
