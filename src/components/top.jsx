@@ -46,8 +46,10 @@ export default function TopParks() {
   
           // Fetch detailed park information for each park code
           const parkDetailsPromises = parkCodes.map(async (parkCode) => {
+    const apiKey = process.env.API_KEY;
+
             const parkResponse = await axios.get(
-              `https://developer.nps.gov/api/v1/parks?parkCode=${parkCode}&api_key=${process.env.API_KEY}`
+              `https://developer.nps.gov/api/v1/parks?parkCode=${parkCode}&api_key=${apiKey}`
             );
             return {
               parkName: parkResponse.data.data[0].fullName,

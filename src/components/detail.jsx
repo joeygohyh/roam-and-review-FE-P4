@@ -17,8 +17,11 @@ const Detail = () => {
   }
 
   useEffect(() => {
+    const apiKey = process.env.API_KEY;
+
+
     fetch(
-      `https://developer.nps.gov/api/v1/parks?parkCode=${parkCode}&api_key=${process.env.API_KEY}`
+      `https://developer.nps.gov/api/v1/parks?parkCode=${parkCode}&api_key=${apiKey}`
     )
       .then((response) => {
         if (!response.ok) {
