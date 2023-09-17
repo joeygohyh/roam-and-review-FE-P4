@@ -25,7 +25,9 @@ const ThingsToDo = ({ parkCode }) => {
   const totalPages = Math.ceil(thingsToDo.length / resultsPerPage);
 
   const fetchThingsToDo = async () => {
-    const url = `https://developer.nps.gov/api/v1/thingstodo?parkCode=${parkCode}&api_key=${process.env.API_KEY}`;
+    const apiKey = process.env.API_KEY;
+
+    const url = `https://developer.nps.gov/api/v1/thingstodo?parkCode=${parkCode}&api_key=${apiKey}`;
 
     try {
       const res = await fetch(url, {

@@ -25,7 +25,9 @@ const VisitorCenters = ({ parkCode }) => {
   const totalPages = Math.ceil(visitorCenters.length / resultsPerPage);
 
   const fetchVisitorCenters = async () => {
-    const url = `https://developer.nps.gov/api/v1/visitorcenters?parkCode=${parkCode}&api_key=${process.env.API_KEY}`;
+    const apiKey = process.env.API_KEY;
+
+    const url = `https://developer.nps.gov/api/v1/visitorcenters?parkCode=${parkCode}&api_key=${apiKey}`;
 
     try {
       const res = await fetch(url, {
