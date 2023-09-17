@@ -1,7 +1,7 @@
 // export default Detail;
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { API_KEY } from "./config";
+// import { API_KEY } from "./config";
 import VisitorCenters from "./VisitorCenters";
 import ThingsToDo from "./ThingsToDo";
 import Reviews from "./Reviews";
@@ -18,7 +18,7 @@ const Detail = () => {
 
   useEffect(() => {
     fetch(
-      `https://developer.nps.gov/api/v1/parks?parkCode=${parkCode}&api_key=${API_KEY}`
+      `https://developer.nps.gov/api/v1/parks?parkCode=${parkCode}&api_key=${process.env.API_KEY}`
     )
       .then((response) => {
         if (!response.ok) {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { API_KEY } from "./config";
+// import { API_KEY } from "./config";
 import ActivityPopup from "./ActivityPopup";
 import { MapPinIcon } from '@heroicons/react/24/solid'
 
@@ -25,7 +25,7 @@ const ThingsToDo = ({ parkCode }) => {
   const totalPages = Math.ceil(thingsToDo.length / resultsPerPage);
 
   const fetchThingsToDo = async () => {
-    const url = `https://developer.nps.gov/api/v1/thingstodo?parkCode=${parkCode}&api_key=${API_KEY}`;
+    const url = `https://developer.nps.gov/api/v1/thingstodo?parkCode=${parkCode}&api_key=${process.env.API_KEY}`;
 
     try {
       const res = await fetch(url, {
