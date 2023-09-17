@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { API_KEY } from "./config";
+// import { API_KEY } from "./config";
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import Detail from "../detail";
 
@@ -19,7 +19,7 @@ const Search = () => {
   };
 
   const fetchParks = async () => {
-    const url = `https://developer.nps.gov/api/v1/parks?q=${searchValue}&api_key=${API_KEY}`;
+    const url = `https://developer.nps.gov/api/v1/parks?q=${searchValue}&api_key=${process.env.API_KEY}`;
 
     try {
       const res = await fetch(url, {

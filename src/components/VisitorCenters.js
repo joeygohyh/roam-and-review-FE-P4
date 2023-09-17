@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { API_KEY } from "./config";
+// import { API_KEY } from "./config";
 import ActivityPopup from "./ActivityPopup";
 
 const resultsPerPage = 4;
@@ -25,7 +25,7 @@ const VisitorCenters = ({ parkCode }) => {
   const totalPages = Math.ceil(visitorCenters.length / resultsPerPage);
 
   const fetchVisitorCenters = async () => {
-    const url = `https://developer.nps.gov/api/v1/visitorcenters?parkCode=${parkCode}&api_key=${API_KEY}`;
+    const url = `https://developer.nps.gov/api/v1/visitorcenters?parkCode=${parkCode}&api_key=${process.env.API_KEY}`;
 
     try {
       const res = await fetch(url, {

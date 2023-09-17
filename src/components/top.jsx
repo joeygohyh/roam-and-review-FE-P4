@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import { API_KEY } from "./config";
+// import { API_KEY } from "./config";
 import { Link } from "react-router-dom";
 import { UserIcon } from '@heroicons/react/24/solid'
 import { AuthContext } from "../components/auth/AuthProvider";
@@ -47,7 +47,7 @@ export default function TopParks() {
           // Fetch detailed park information for each park code
           const parkDetailsPromises = parkCodes.map(async (parkCode) => {
             const parkResponse = await axios.get(
-              `https://developer.nps.gov/api/v1/parks?parkCode=${parkCode}&api_key=${API_KEY}`
+              `https://developer.nps.gov/api/v1/parks?parkCode=${parkCode}&api_key=${process.env.API_KEY}`
             );
             return {
               parkName: parkResponse.data.data[0].fullName,
