@@ -25,7 +25,7 @@ const Campgrounds = ({ parkCode }) => {
 
   const fetchCampgrounds = async () => {
 
-    const apiKey = process.env.API_KEY;
+    const apiKey = process.env.REACT_APP_API_KEY;
 
     const url = `https://developer.nps.gov/api/v1/campgrounds?parkCode=${parkCode}&api_key=${apiKey}`;
 
